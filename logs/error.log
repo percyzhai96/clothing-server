@@ -1,1 +1,7 @@
 [2024-04-15T00:04:54.066] [ERROR] error - POST /api/private/roles/one *** 响应：{"code":401,"message":"您没有访问权限！","ip":"127.0.0.1"}
+[2025-04-03T21:17:21.332] [ERROR] error - POST /api/private/roles/one *** 响应：{"code":401,"message":"您没有访问权限！","ip":"127.0.0.1"}
+[2025-04-03T21:17:34.504] [ERROR] error - 【admin】:账号或密码错误！  ip : 127.0.0.1
+[2025-04-03T21:20:35.635] [ERROR] error - 【admin】:账号或密码错误！  ip : 127.0.0.1
+[2025-04-03T21:32:38.295] [ERROR] error - 【admin】:账号或密码错误！  ip : 127.0.0.1
+[2025-04-03T21:37:13.975] [ERROR] error - POST /api/private/users/create *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
+[2025-04-03T21:37:39.237] [ERROR] error - POST /api/private/users/create *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}

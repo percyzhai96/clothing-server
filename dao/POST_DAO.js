@@ -1,26 +1,26 @@
 /**
  *@Description:博文查询方法
  */
-const utilsTools = require("../utils/utils.tools");
-const db = require("../models/index");
-const logger = require("../utils/utils.logger");
+const utilsTools = require("../utils/utils.tools")
+const db = require("../models/index")
+const logger = require("../utils/utils.logger")
 
 //整理统一返回格式
-function resExtra(data, code = 200, message = '操作成功！') {
+function resExtra (data, code = 200, message = '操作成功！') {
     return { data, code, message }
 }
 
 //查询列表条件处理
-function queryConditions(conditions, count) {
+function queryConditions (conditions, count) {
     let queryCon = {
-        where: {record_state: 0},
+        where: { record_state: 0 },
         limit: 20,
         offset: 0,
     }
 
     if (conditions.params) {
-        queryCon.where = utilsTools.deleteNullObj(conditions.params);
-        queryCon.where.record_state = 0;
+        queryCon.where = utilsTools.deleteNullObj(conditions.params)
+        queryCon.where.record_state = 0
     }
     if (conditions.limit) {
         queryCon.limit = parseInt(conditions.limit) || 20
@@ -54,7 +54,7 @@ const sqlOpt = {
      * @param  {Function} cb          回调函数
      */
     count: (model, conditions, cb) => {
-        if (!model) return cb(resExtra('', 605, '模型不存在'));
+        if (!model) return cb(resExtra('', 605, '模型不存在'))
         model.findAndCountAll(queryConditions(conditions, 'count')).then(data => {
             cb(resExtra(data.count))
         }).catch(err => {
@@ -70,7 +70,7 @@ const sqlOpt = {
      * @param  {Function} cb          回调函数
      */
     list: (model, conditions, cb) => {
-        if (!model) return cb(resExtra('', 605, '模型不存在'));
+        if (!model) return cb(resExtra('', 605, '模型不存在'))
 
         model.findAndCountAll(queryConditions(conditions, 'count')).then(countAll => {
             model.findAll(queryConditions(conditions)).then(data => {
@@ -92,12 +92,12 @@ const sqlOpt = {
      * @param  {Function} cb          回调函数
      */
     findOne: (model, conditions, cb) => {
-        if (!model) return cb(resExtra('', 605, '模型不存在'));
+        if (!model) return cb(resExtra('', 605, '模型不存在'))
         /* 根据主键查询一条数据 参数
         conditions:{
              id:'123'
          }*/
-        if (!conditions.id) return cb(resExtra('', 605, '查询条件为空！'));
+        if (!conditions.id) return cb(resExtra('', 605, '查询条件为空！'))
         model.findByPk(conditions.id).then(data => {
             cb(resExtra(data))
         }).catch(err => {
