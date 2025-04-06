@@ -34,7 +34,7 @@ router.post("/", function (req, res) {
             return
         }
         //记录访客
-        utilTool.generateVisitorRecord(req, data.userInfo.userId)
+        // utilTool.generateVisitorRecord(req, data.userInfo.userId)
         res.sendResultAto(data, 200, '登录成功')
     })
 });
