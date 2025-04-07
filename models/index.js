@@ -38,6 +38,8 @@ db.notice = require("./sys-notice.model.js")(sequelize, Sequelize);
 db.visitor = require("./sys-log_visitor.model.js")(sequelize, Sequelize);
 //文件管理
 db.files = require("./sys-files.model.js")(sequelize, Sequelize);
+// 进货管理
+db.goods = require("./sys-goods.model.js")(sequelize,Sequelize);
 
 
 
