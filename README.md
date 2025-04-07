@@ -1,12 +1,5 @@
 # node-serve
 
-[gitee 地址](https://gitee.com/todpole/node-serve)
-
-vue2后台管理系统模板👉[vue2-admin](https://gitee.com/todpole/vue2-admin)
-
-[预览地址：](https://todpole.gitee.io/vue2-admin/)https://todpole.gitee.io/vue2-admin/
-
-本项目可作为模板进行二次开发，一个 "开箱即用" node接口服务模板去快速开始你的项目！
 - 项目技术栈基于 `express` `sequelize` `swagger-ui`；
 
 ### 安装依赖 node: '>=12.0.0'
@@ -84,13 +77,3 @@ npm run serve
 
 ```
 
-### 最后
-
-- 如果喜欢一定要 star哈!!!（谢谢!!）
-- 欢迎大家提建议，一起学习。
-- 如果你有更好的建议，欢迎提交 pr。
-- 如果有意见和问题 请在 lssues提出，我看到后会解答。
-
-- 作者公众号
-
-<img src="uploads_files/公众号.png" alt="公众号" width="60%" >
