@@ -1,45 +1,48 @@
-const { DataTypes } = require("sequelize/types/index.js")
-
 module.exports = (sequelize, Sequelize) => {
   return sequelize.define('sys_goods', {
     // 主键id
     id: {
-      type: DataTypes.UUID,
-      notNull: true,
+      type: Sequelize.UUID,
+      allowNull: false,
       primaryKey: true,
       defaultValue: Sequelize.UUIDV4 // 或 DataTypes.UUIDV1
     },
     // 进货方名称
     shopName: {
-      type: DataTypes.STRING,
-      notNull: true,
+      type: Sequelize.STRING,
+      allowNull: false,
     },
     // 进货时间
     purchaseTime: {
-      type: DataTypes.DATEONLY,
-      defaultValue: DataTypes.NOW
+      type: Sequelize.DATEONLY,
+      defaultValue: Sequelize.NOW
     },
     // 商品款号
     styleNumber: {
-      type: DataTypes.SMALLINT,
-      notNull: true
+      type: Sequelize.STRING,
+      allowNull: false
     },
     // 商品名称
     goodName: {
-      type: DataTypes.STRING,
-      notNull: true,
+      type: Sequelize.STRING,
+      allowNull: false,
       defaultValue: "",
     },
     // 商品数量
     goodNum: {
-      type: DataTypes.INTEGER,
-      notNull: true,
+      type: Sequelize.INTEGER,
+      allowNull: false,
       defaultValue: 1,
     },
     // 商品单价
     unitPrice: {
-      type: DataTypes.DECIMAL(10, 2),
-      notNull: true,
+      type: Sequelize.DECIMAL(10, 2),
+      allowNull: false,
     },
+
+    sysUserId: {
+      type: Sequelize.UUID,
+      allowNull: false,
+    }
   })
 }

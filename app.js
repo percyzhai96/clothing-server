@@ -3,14 +3,14 @@ const express = require('express')
 const getPublicIP = require('./utils/utils.ip')
 const bodyParser = require('body-parser')
 const path = require('path')
-const chalk = require('chalk'); // https://www.npmjs.com/package/chalk
-const logger = require("./utils/utils.logger");
+const chalk = require('chalk') // https://www.npmjs.com/package/chalk
+const logger = require("./utils/utils.logger")
 // 路由加载
 const mount = require('mount-routes')
 const app = express()
 const cors = require('cors')// 解决跨域
 // 托管静态资源
-app.use('/static', express.static(__dirname + '/uploads_files'));
+app.use('/static', express.static(__dirname + '/uploads_files'))
 
 
 //访问 .env文件
@@ -36,8 +36,8 @@ app.use(session({
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: false }))
 
-const db = require("./models");
-db.sequelize.sync();
+const db = require("./models")
+db.sequelize.sync()
 // db.files.sync({ alter: true })
 
 //解决跨域
@@ -76,10 +76,10 @@ app.use(function (err, req, res, next) {
     if (err.name === 'UnauthorizedError') {
         logger.error(`${req.method} ${req.baseUrl + req.path} *** 响应：${JSON.stringify({
             code: err.status || 401,
-            message:'您没有访问权限！',
-            ip:getPublicIP(req)
-        })}`);
-        res.status(401).sendResultAto(null, 401,'您没有访问权限！');
+            message: '您没有访问权限！',
+            ip: getPublicIP(req)
+        })}`)
+        res.status(401).sendResultAto(null, 401, '您没有访问权限！')
     }
 })
 
@@ -91,8 +91,8 @@ app.use(function (req, res, next) {
     res.status(404).sendResult({ data: null, code: 404, message: 'Not Found' })
 })
 app.listen(process.env.DEV_PORT, () => {
-    console.log(chalk.bold.green(`项目启动成功: ${process.env.DEV_URL}:${process.env.DEV_PORT}`));
-    console.log(chalk.bold.green(`接口文档地址: ${process.env.DEV_URL}:${process.env.DEV_PORT}/swagger`));
+    console.log(chalk.bold.green(`项目启动成功: ${process.env.DEV_URL}:${process.env.DEV_PORT}`))
+    console.log(chalk.bold.green(`接口文档地址: ${process.env.DEV_URL}:${process.env.DEV_PORT}/swagger`))
 })
 
 module.exports = app
