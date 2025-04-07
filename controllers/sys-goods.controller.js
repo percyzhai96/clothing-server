@@ -11,7 +11,11 @@ USER.hasMany(GOODS)
 GOODS.belongsTo(USER)
 
 // 新增进货记录
-
+exports.create = (req,res)=>{
+  const pm = req.body;
+  // 通过传递的用户id来与对应用户id关联进货商品
+  
+}
 
 
 // 通过excel导入记录
