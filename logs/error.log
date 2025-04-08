@@ -68,3 +68,9 @@
 [2025-04-07T18:09:34.758] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
 [2025-04-07T18:09:45.793] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
 [2025-04-07T18:11:30.308] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
+[2025-04-07T18:14:33.389] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
+[2025-04-08T15:00:04.577] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
+[2025-04-08T15:01:50.512] [ERROR] error - POST /api/private/roles/one *** 响应：{"code":401,"message":"您没有访问权限！","ip":"127.0.0.1"}
+[2025-04-08T15:07:03.236] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
+[2025-04-08T15:07:38.388] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
+[2025-04-08T15:29:55.368] [ERROR] error - POST /api/private/goodsCreate *** 响应：{"code":401,"message":"您没有访问权限！","ip":"::1"}
